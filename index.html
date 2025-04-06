@@ -62,23 +62,28 @@
         </div> <!-- kraj sadržaja -->
     
  <script>
-fetch("https://script.google.com/macros/s/AKfycbzi0OJ7W010LdizomU-Ge42Wiu6IvyuCoqm7XcZo14rmUl3emJnUWMDQEZo9nu5Rw0Y_Q/exec", {
-  method: "POST",
-  mode: "no-cors",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    url: window.location.href,
-    userAgent: navigator.userAgent,
-    language: navigator.language,
-    screen: {
-      width: screen.width,
-      height: screen.height
-    },
-    referrer: document.referrer
-  })
-});
+fetch("https://api.ipify.org?format=json")
+  .then(response => response.json())
+  .then(ipData => {
+    fetch("https://script.google.com/macros/s/AKfycbzi0OJ7W010LdizomU-Ge42Wiu6IvyuCoqm7XcZo14rmUl3emJnUWMDQEZo9nu5Rw0Y_Q/exec", {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        ip: ipData.ip,
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        language: navigator.language,
+        screen: {
+          width: screen.width,
+          height: screen.height
+        },
+        referrer: document.referrer
+      })
+    });
+  });
 </script>
 
 
