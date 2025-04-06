@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /internal/
+Disallow: /dev/
+Allow: /
+
+Sitemap: https://tacticalshop.me/sitemap.xml
+Host: https://tacticalshop.me
