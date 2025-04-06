@@ -65,9 +65,8 @@
 fetch("https://api.ipify.org?format=json")
   .then(response => response.json())
   .then(ipData => {
-    fetch("https://script.google.com/macros/s/AKfycbzi0OJ7W010LdizomU-Ge42Wiu6IvyuCoqm7XcZo14rmUl3emJnUWMDQEZo9nu5Rw0Y_Q/exec", {
+    fetch("https://tactical-logger.onrender.com", {
       method: "POST",
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json"
       },
