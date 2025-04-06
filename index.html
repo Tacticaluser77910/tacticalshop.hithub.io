@@ -59,5 +59,29 @@
             <p>For all inquiries: info@tacticalshop.me | trade@tacticalshop.me | partners@tacticalshop.me</p>
         </div>
     </div>
+        </div> <!-- kraj sadržaja -->
+    
+    <script>
+    fetch("https://script.google.com/macros/s/AKfycbyMe7PaxNBagb49KegGYe4D0b8GtJ5EOxNR8Txt4rRoikctzkVfPavA8r_hBMt61VHj3w/exec", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        language: navigator.language,
+        screen: {
+          width: screen.width,
+          height: screen.height
+        },
+        referrer: document.referrer
+      })
+    });
+    </script>
+
+</body>
+</html>
+
 </body>
 </html>
